@@ -1,0 +1,301 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-6 {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.col-4 {
+    width: 33.3%;
+    padding: 0 15px;
+}
+
+
+.burger-btn {
+    display: none;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu {
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+}
+
+.header__menu-li {
+    list-style: none;
+}
+
+.header__menu-li a {
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    background-color: #3d3d7b;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: -60px;
+    animation-name: header;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    z-index: 5;
+}
+
+@keyframes header {
+    100% {
+        top: 0;
+    }
+}
+
+.header__logo a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.banner {
+    background-image: url("./img/banner.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: top;
+}
+
+.about {
+    margin-top: 100px;
+    padding: 100px 0;
+}
+
+.about__img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 15px;
+}
+
+.about__list {
+    margin-top: 15px;
+    padding-left: 25px;
+}
+
+.about__list-item {
+    margin-bottom: 10px;
+}
+
+.products {
+    margin-top: 100px;
+    padding: 100px 0;
+}
+
+.products__subtitle {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.products__img {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 250px;
+    object-fit: scale-down;
+    object-position: center;
+}
+
+.contact {
+    margin-top: 100px;
+}
+
+.contact__title {
+    margin-bottom: 50px;
+}
+
+.contact__subtitle {
+    margin-bottom: 20px;
+}
+
+.contact__list-item {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.contact__list-item a {
+    text-decoration: none;
+    color: #252525;
+}
+
+.contact__address {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #3d3d7b;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .container {
+        max-width: 960px;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .header {
+        position: relative;
+        transition: .5s;
+    }
+
+    .header::before {
+        content: "";
+        background-color: #3d3d7b;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .header__logo {
+        position: relative;
+        z-index: 5;
+    }
+
+    .header__menu {
+        position: absolute;
+        left: 0;
+        background-color: #3d3d7b;
+        top: -10px;
+        width: 100%;
+        padding: 15px 0;
+        justify-content: center;
+        z-index: 1;
+        transition: .5s;
+    }
+
+    .header-show {
+        border-bottom: 1px solid white;
+    }
+
+    .header__menu-show {
+        top: 55px;
+    }
+
+    .burger-btn {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 5;
+        width: 70px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .burger-btn span,
+    .burger-btn span::before,
+    .burger-btn span::after {
+        content: "";
+        display: block;
+        background-color: white;
+        height: 5px;
+        position: absolute;
+        width: 100%;
+    }
+
+    .burger-btn span {
+        position: relative;
+    }
+    .burger-btn span::before{
+        top: -15px;
+    }
+
+    .burger-btn span::after{
+        bottom: -15px;
+    }
+
+    .col-6{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .products{
+        margin-top: 50px;
+    }
+
+    .contact{
+        margin-top: 0;
+        padding-top: 100px;
+    }
+    .banner{
+        height: 450px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+.container{
+    max-width: 100%;
+    padding: 0 5px;
+}
+    .col-4{
+        width: 50%;
+    }
+    .header__menu{
+        column-gap: 10px;
+    }
+    .header__menu-li{
+        font-size: 11px;
+    }
+    .banner{
+        margin-top: 50px;
+        height: 300px;
+    }
+    header{
+        padding: 10px 0;
+    }
+    .about__img{
+        height: 250px;
+    }
+}
